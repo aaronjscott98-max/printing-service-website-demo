@@ -1,0 +1,807 @@
+/* --- 1. CORE VARIABLES --- */
+:root {
+  --bg-dark: #0B0E14;           
+  --bg-surface: #151921;        
+  --accent-tech: #10B981;       
+  --accent-hover: #059669;      
+  --accent-glow: rgba(16, 185, 129, 0.3);
+  
+  --text-primary: #FFFFFF;      
+  --text-secondary: #CBD5E1;    
+  --text-muted: #94A3B8;        
+  
+  --border: #2D3748;            
+  --radius-lg: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 2. BASE STYLES --- */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+a {
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* WCAG Skip Link */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--accent-tech);
+    color: white;
+    padding: 10px 20px;
+    z-index: 2000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* --- 3. NAVIGATION --- */
+.navbar {
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.accent-text { color: var(--accent-tech); }
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a { color: var(--text-muted); font-weight: 500; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+.nav-cta {
+    background-color: var(--accent-tech);
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 10px var(--accent-glow);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+}
+
+/* --- 4. HERO & STATS --- */
+.hero-tech {
+    padding: 100px 0;
+    text-align: center;
+    background: radial-gradient(circle at top, var(--bg-surface) 0%, var(--bg-dark) 100%);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-surface);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-tech);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-tech);
+}
+
+.gradient-text {
+    color: var(--accent-tech);
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.stats-bar {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item { text-align: center; }
+.stat-number { font-size: 2rem; font-weight: 800; color: var(--accent-tech); }
+.stat-label { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; }
+
+/* --- 5. SERVICE & INFO CARDS --- */
+.services-preview, .cta-banner { padding: 80px 0; }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+
+/* --- UPDATED CARD GRID --- */
+.card-grid {
+    display: grid;
+    /* This ensures cards stay at a reasonable size and wrap properly */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px)); 
+    gap: 30px;
+    justify-content: center; /* Keeps them centered on the page */
+    margin-top: 40px;
+}
+
+.info-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 25px; /* Reduced from 40px to prevent 'bloated' look */
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in a row stay the same height */
+}
+
+.info-card:hover {
+    border-color: var(--accent-tech);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+}
+
+/* --- 16. CARD IMAGE STYLING --- */
+
+.card-image-wrapper {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: calc(var(--radius-lg) - 4px);
+    margin-bottom: 20px;
+    background: var(--bg-dark); /* Fallback while loading */
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills space without stretching */
+    transition: var(--transition);
+    filter: brightness(0.8) grayscale(20%); /* Matches your dark tech theme */
+}
+
+.info-card:hover .card-image-wrapper img {
+    transform: scale(1.05); /* Slight zoom on hover */
+    filter: brightness(1) grayscale(0%);
+}
+
+/* Testimonials */
+blockquote p {
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+cite {
+    color: var(--accent-tech);
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* --- 6. NEWSLETTER FORM --- */
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 14px 20px;
+    border-radius: var(--radius-lg);
+    flex: 2;
+    min-width: 250px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--accent-tech);
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border);
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-links { list-style: none; padding: 0; margin-top: 20px; line-height: 2.2; }
+.footer-links a { color: var(--text-muted); }
+.footer-links a:hover { color: var(--accent-tech); padding-left: 5px; }
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- 8. BUTTONS & LINKS --- */
+.btn-main {
+    background: var(--accent-tech);
+    color: white;
+    padding: 16px 32px;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-main:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 8px 25px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 16px 32px;
+    border-radius: var(--radius-lg);
+    display: inline-block;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--bg-surface);
+    border-color: var(--text-muted);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent-tech);
+    font-weight: 600;
+}
+
+.text-link:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* --- 10. SERVICES PAGE SPECIFIC --- */
+
+/* Parent Grid Container */
+.info-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 130px 30px; 
+    padding: 60px 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Category Filter Layout */
+.svc-filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.svc-filter-btn {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 14px 28px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.svc-filter-btn:hover {
+    border-color: var(--accent-tech);
+    color: var(--text-primary);
+}
+
+.svc-filter-btn.is-active {
+    background: var(--accent-tech);
+    color: white;
+    border-color: var(--accent-tech);
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* Individual Product Card */
+.svc-product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Luxury internal padding */
+    padding: 3rem; 
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent-tech);
+    border-radius: 12px;
+    margin: 0;
+    
+    transition: var(--transition);
+    animation: svcItemFade 0.4s ease-out forwards;
+}
+
+.svc-product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-tech);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Internal Card Content Spacing */
+.svc-product-card h3 {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.svc-product-card p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 3rem; /* Pushes price tag and link to the bottom */
+    flex-grow: 1; 
+}
+
+/* Price Badge */
+.svc-price-tag {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-tech);
+    background: rgba(var(--accent-rgb), 0.1);
+    padding: 10px 20px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+/* Order Now Link */
+.svc-product-card .text-link {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--accent-tech);
+    transition: var(--transition);
+}
+
+.svc-product-card .text-link:hover {
+    letter-spacing: 1px;
+}
+
+/* Filtering Utility */
+.svc-hidden {
+    display: none;
+}
+
+/* Entrance Animation */
+@keyframes svcItemFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- 11. PORTFOLIO GRID STYLES --- */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.port-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 300px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+}
+
+/* Container logic */
+.port-image {
+    width: 100%;
+    /* Set a fixed height or aspect-ratio so cards are uniform */
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Clips the image if it zooms on hover */
+    background: linear-gradient(45deg, #111, #1a1a1a);
+    border-radius: 8px 8px 0 0; /* Optional: matches card corners */
+}
+
+/* Image behavior logic */
+.port-image img {
+    width: 100%;
+    height: 100%;
+    /* This is the magic line - it fills the space without stretching */
+    object-fit: cover; 
+    /* Ensures the image stays centered */
+    object-position: center;
+    display: block;
+}
+
+/* Hover Effect: Show Overlay */
+.port-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(11, 14, 20, 0.95));
+    padding: 30px 20px;
+    transform: translateY(100%);
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.port-item:hover .port-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.port-overlay h4 {
+    color: var(--accent-tech);
+    margin-bottom: 5px;
+}
+
+.port-overlay p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Ensure Portfolio Items follow the filter logic */
+.port-item.svc-hidden {
+    display: none !important;
+}
+
+/* --- 13. RATE TABLE STYLES --- */
+
+.pricing-table-container {
+    overflow-x: auto; /* Ensures table is readable on mobile */
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    margin-top: 20px;
+}
+
+.rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: var(--text-secondary);
+}
+
+.rate-table th {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent-tech);
+    padding: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rate-table td {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.rate-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.rate-table strong {
+    color: var(--text-primary);
+}
+
+.price-disclaimer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* --- 14. CONTACT PAGE - FULL STYLING --- */
+
+/* Layout: Sidebar on left, Form on right */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+/* Sidebar Info Cards */
+.contact-sidebar .info-card {
+    margin-bottom: 20px;
+}
+
+/* The Main Form Container */
+.contact-form-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+/* Universal Input Styling (Fixes the "tiny" input problem) */
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-tech);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Custom Drag & Drop Area */
+.file-drop-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.file-drop-area:hover {
+    border-color: var(--accent-tech);
+    background: rgba(16, 185, 129, 0.05);
+    transform: translateY(-2px);
+}
+
+.file-icon { font-size: 2rem; margin-bottom: 10px; }
+.file-msg { font-weight: 600; color: var(--text-primary); }
+.file-info { font-size: 0.8rem; color: var(--text-muted); margin-top: 5px; }
+
+/* Active state for when a file is selected */
+.file-active {
+    border-color: var(--accent-tech);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+/* The Big Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--accent-tech);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-submit:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 8px 25px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+/* Footer Address reset */
+address {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* --- 15. MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 1024px) {
+    .info-card-grid, .portfolio-grid, .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Navigation & Logo Fix */
+    .nav-container {
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.25rem; /* Scaled down to prevent clipping */
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-surface);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        gap: 1.5rem;
+        text-align: center;
+        list-style: none;
+        z-index: 1000;
+    }
+
+    .nav-links.open {
+        display: flex;
+        animation: svcItemFade 0.3s ease forwards;
+    }
+
+    /* RESTORED: Hamburger Toggle Styles */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        margin: 5px 0;
+        transition: var(--transition);
+    }
+
+    /* 2. Hero & Button Scaling */
+    .hero-tech {
+        padding: 60px 20px;
+    }
+
+    .hero-tech h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    /* Fixed Button Widths */
+    .btn-main, .btn-outline {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* 3. Grid & Card Fixes */
+    .info-card-grid, .portfolio-grid, .card-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .svc-product-card {
+        padding: 1.5rem;
+    }
+
+    .port-item {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    /* 4. Filter Bar - Horizontal Scroll */
+    .svc-filter-bar {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-tech h1 {
+        font-size: 1.8rem;
+    }
+}

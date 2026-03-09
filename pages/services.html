@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | PrintPro Custom Printing Catalogue</title>
+    <meta name="description" content="Browse our complete catalogue of printing services including business stationery, large format banners, and custom apparel.">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">PRINT<span class="accent-text">PRO</span></a>
+            
+                <button class="hamburger" onclick="toggleMenu(this)" aria-label="Toggle Menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <header class="hero-tech">
+            <div class="container">
+                <h1>Our <span class="gradient-text">Services</span></h1>
+                <p>Explore our high-precision printing solutions. Filter by category to find exactly what you need for your business or brand.</p>
+            </div>
+        </header>
+
+        <section class="services-preview">
+            <div class="container">
+                
+                <div class="svc-filter-bar" role="tablist">
+                    <button class="svc-filter-btn is-active" data-filter="all">All Products</button>
+                    <button class="svc-filter-btn" data-filter="branding">Branding</button>
+                    <button class="svc-filter-btn" data-filter="large-format">Large Format</button>
+                    <button class="svc-filter-btn" data-filter="apparel">Apparel</button>
+                    <button class="svc-filter-btn" data-filter="promo">Promotional</button>
+                </div>
+
+                <div class="info-card-grid">
+                    <article class="info-card svc-product-card" data-category="branding">
+                        <div class="card-image-placeholder">Business Cards</div>
+                        <h3>Premium Silk Cards</h3>
+                        <p>Luxury 450gsm weighted cardstock with soft-touch matte lamination.</p>
+                        <span class="svc-price-tag">From £25.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="branding">
+                        <div class="card-image-placeholder">Spot UV Finishing</div>
+                        <h3>Executive Spot UV Cards</h3>
+                        <p>Raised high-gloss varnish applied to specific design elements for a tactile effect.</p>
+                        <span class="svc-price-tag">From £45.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="large-format">
+                        <div class="card-image-placeholder">Vinyl Banners</div>
+                        <h3>Outdoor Banners</h3>
+                        <p>Weather-resistant PVC with metal eyelets for secure mounting in any conditions.</p>
+                        <span class="svc-price-tag">From £45.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="large-format">
+                        <div class="card-image-placeholder">Roller Banners</div>
+                        <h3>Premium Pull-up Displays</h3>
+                        <p>Anti-curl grey-back media housed in a heavy-duty aluminium base.</p>
+                        <span class="svc-price-tag">From £65.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="apparel">
+                        <div class="card-image-placeholder">T-Shirts</div>
+                        <h3>Organic Cotton Tee</h3>
+                        <p>Sustainable, screen-printed apparel for teams, retail, and events.</p>
+                        <span class="svc-price-tag">From £12.50</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="apparel">
+                        <div class="card-image-placeholder">Polo Shirts</div>
+                        <h3>Dundee Dry Polo Range</h3>
+                        <p>High-density 220gsm pique cotton with custom high-thread-count embroidery.</p>
+                        <span class="svc-price-tag">From £16.50</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="branding">
+                        <div class="card-image-placeholder">Stationery</div>
+                        <h3>Corporate Letterheads</h3>
+                        <p>Professional grade 120gsm bond paper for official business correspondence.</p>
+                        <span class="svc-price-tag">From £35.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="large-format">
+                        <div class="card-image-placeholder">Window Vinyl</div>
+                        <h3>Etched Window Graphics</h3>
+                        <p>Frosted privacy film or perforated one-way vision vinyl for storefronts.</p>
+                        <span class="svc-price-tag">From £35.00/m²</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="apparel">
+                        <div class="card-image-placeholder">Hoodies</div>
+                        <h3>Embroidered Hoodies</h3>
+                        <p>Premium heavy-weight fleece with custom embroidery or heat-press options.</p>
+                        <span class="svc-price-tag">From £28.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="promo">
+                        <div class="card-image-placeholder">Stickers</div>
+                        <h3>Die-Cut Vinyl Stickers</h3>
+                        <p>Weather-proof laminate individual stickers in custom shapes and sizes.</p>
+                        <span class="svc-price-tag">From £20.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="large-format">
+                        <div class="card-image-placeholder">Posters</div>
+                        <h3>A1 High-Gloss Posters</h3>
+                        <p>Vibrant, photo-quality printing on 200gsm satin paper for exhibitions.</p>
+                        <span class="svc-price-tag">From £18.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+
+                    <article class="info-card svc-product-card" data-category="promo">
+                        <div class="card-image-placeholder">Bound Documents</div>
+                        <h3>Wiro-Bound Brochures</h3>
+                        <p>Manuals and reports with acetate covers and durable metal wire binding.</p>
+                        <span class="svc-price-tag">From £8.00</span>
+                        <a href="contact.html" class="text-link">Order Now &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <section>
+                    <div class="logo">PRINT<span class="accent-text">PRO</span></div>
+                    <p>High-precision physical media delivered with emerald-standard care.</p>
+                </section>
+                <nav aria-label="Footer Links">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/services.html">Services</a></li>
+                        <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                        <li><a href="../pages/pricing.html">Pricing</a></li>
+                        <li><a href="../pages/contact.html">Get a Quote</a></li>
+                    </ul>
+                </nav>
+                <section>
+                    <h4>Contact Us</h4>
+                    <address>
+                        Dundee Design District, Scotland<br>
+                        Email: <a href="mailto:hello@printpro.com">hello@printpro.com</a><br>
+                        Phone: <a href="tel:+441234567890">01234 567890</a>
+                    </address>
+                </section>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 PrintPro Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

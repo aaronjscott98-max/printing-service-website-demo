@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote | PrintPro Precision Printing</title>
+    <meta name="description" content="Submit your project details and artwork for a professional print quote.">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">PRINT<span class="accent-text">PRO</span></a>
+            
+                <button class="hamburger" onclick="toggleMenu(this)" aria-label="Toggle Menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <header class="hero-tech">
+            <div class="container">
+                <h1>Start Your <span class="gradient-text">Project</span></h1>
+                <p>Upload your designs and project specs. Our team will verify your files for print-readiness.</p>
+            </div>
+        </header>
+
+        <section class="services-preview">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <div class="contact-sidebar">
+                        <div class="info-card">
+                            <h3>Our Studio</h3>
+                            <p>Dundee Design District<br>Unit 4, Tech Park<br>DD2 1PB</p>
+                            <br>
+                            <h4>Hours</h4>
+                            <p>Mon - Fri: 09:00 - 17:30</p>
+                        </div>
+                        
+                        <div class="info-card" style="margin-top: 20px; border-color: var(--accent-tech);">
+                            <h4>Technical Requirements</h4>
+                            <ul style="font-size: 0.85rem; padding-left: 20px; color: var(--text-secondary);">
+                                <li>Minimum 300 DPI</li>
+                                <li>CMYK Color Profile</li>
+                                <li>3mm Bleed area</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card">
+                        <form id="quote-form">
+                            <div class="form-group">
+                                <label for="user-name">Full Name</label>
+                                <input type="text" id="user-name" class="form-input" placeholder="e.g. Alex Smith" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user-email">Email Address</label>
+                                <input type="email" id="user-email" class="form-input" placeholder="alex@company.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service-type">Project Type</label>
+                                <select id="service-type" class="form-input">
+                                    <option value="branding">Business Branding</option>
+                                    <option value="large-format">Large Format / Signage</option>
+                                    <option value="apparel">Custom Apparel</option>
+                                    <option value="bespoke">Bespoke Print Job</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Project Details</label>
+                                <textarea id="message" class="form-input" rows="5" placeholder="Tell us about quantities, materials, and deadlines..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Upload Artwork (Optional)</label>
+                                <label for="file-upload" class="file-drop-area">
+                                    <span class="file-icon">📁</span>
+                                    <span class="file-msg">Drag & drop or <span class="accent-text">click to browse</span></span>
+                                    <span class="file-info">PDF, AI, or TIFF (Max 25MB)</span>
+                                    <input type="file" id="file-upload" hidden>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-submit">Send Quote Request</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <footer class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <section>
+                    <div class="logo">PRINT<span class="accent-text">PRO</span></div>
+                    <p>High-precision physical media delivered with emerald-standard care.</p>
+                </section>
+                <nav aria-label="Footer Links">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/services.html">Services</a></li>
+                        <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                        <li><a href="../pages/pricing.html">Pricing</a></li>
+                        <li><a href="../pages/contact.html">Get a Quote</a></li>
+                    </ul>
+                </nav>
+                <section>
+                    <h4>Get In Touch</h4>
+                    <address style="font-style: normal; font-size: 0.9rem; color: var(--text-muted);">
+                        Dundee Design District, Scotland<br>
+                        Email: <a href="mailto:hello@printpro.com">hello@printpro.com</a><br>
+                        Phone: <a href="tel:+441234567890">01234 567890</a>
+                    </address>
+                </section>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 PrintPro Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
