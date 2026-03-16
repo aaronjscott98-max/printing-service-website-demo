@@ -2,7 +2,7 @@
 
 A professional landing page demo designed and built for a local service-based business. This project showcases my ability to deliver a polished, high-conversion user experience from the ground up.
 
-👉 View the Live Demo (https://aaronjscott98-max.github.io/printing-service-website-demo/)
+👉 [View the Live Demo](https://aaronjscott98-max.github.io/printing-service-website-demo/)
 
 🏗️ The Project Brief
 I created this demo to show how a local business in the Dundee & Tayside area can establish a premium digital presence. The focus was on building trust through clean design, intuitive navigation, and clear calls-to-action tailored for a high-quality printing service.
@@ -40,7 +40,7 @@ I’m a Web Design & Development Graduate based in Dundee. I’m currently takin
 I’m that rare breed of designer who actually enjoys getting stuck into the code—I don't just want things to look pretty; I want them to work perfectly.
 
 📬 Let's Chat
-Portfolio: My Portfolio Website (https://aaronjscott.co.uk/)
+Portfolio: [My Portfolio](https://aaronjscott.co.uk/)
 
 Email: aaron.j.scott98@gmail.com
 
