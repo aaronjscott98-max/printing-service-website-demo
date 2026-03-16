@@ -277,6 +277,10 @@ footer {
 .footer-links a { color: var(--text-muted); }
 .footer-links a:hover { color: var(--accent-tech); padding-left: 5px; }
 
+.footer-link a{
+    color: var(--text-primary);
+}
+
 .copyright {
     text-align: center;
     padding-top: 30px;
