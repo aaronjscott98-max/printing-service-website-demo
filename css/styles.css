@@ -1,14 +1,15 @@
 :root {
   --bg-dark: #0B0E14;           
   --bg-surface: #151921;        
-  /* Darkened to #059669 to pass WCAG AA contrast with white text */
+  /* Darkened to #059669 for WCAG AA compliance with white text */
   --accent-tech: #059669;       
   --accent-hover: #047857;      
   --accent-glow: rgba(5, 150, 105, 0.3);
   
   --text-primary: #FFFFFF;      
   --text-secondary: #CBD5E1;    
-  --text-muted: #94A3B8;        
+  /* Lightened to #94A3B8 for better contrast against dark backgrounds */
+  --text-muted: #A1A1AA;        
   
   --border: #2D3748;            
   --radius-lg: 12px;
@@ -691,7 +692,7 @@ address {
     line-height: 1.8;
 }
 
-/* --- 15. MOBILE RESPONSIVENESS (FINAL ACCESSIBLE FIX) --- */
+/* --- 15. MOBILE RESPONSIVENESS (FINAL ACCESSIBILITY FIX) --- */
 
 @media (max-width: 1024px) {
     .info-card-grid, .portfolio-grid, .card-grid {
@@ -710,30 +711,11 @@ address {
     }
 
     .logo {
-        font-size: 1.2rem; /* Shrinks logo to prevent clipping */
+        font-size: 1.2rem; /* Shrinks logo to prevent clipping on mobile */
         white-space: nowrap;
     }
 
-    /* RESTORED: Hamburger Toggle Icon */
-    .hamburger {
-        display: block; 
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        z-index: 1100;
-    }
-
-    .hamburger .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background: var(--text-primary);
-        margin: 5px 0;
-        transition: var(--transition);
-    }
-
-    /* Mobile Menu: Solid Background & Shadow */
+    /* Mobile Menu: Solid Background & Border Fix */
     .nav-links {
         display: none; 
         flex-direction: column;
@@ -741,10 +723,10 @@ address {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--bg-surface); /* Prevents hero text overlap */
+        background-color: var(--bg-surface); /* Solid color to prevent hero overlap */
         border-bottom: 2px solid var(--accent-tech);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        padding: 2.5rem 1.5rem;
+        padding: 2rem 1.5rem;
         gap: 1.5rem;
         text-align: center;
         list-style: none;
@@ -756,54 +738,37 @@ address {
         animation: svcItemFade 0.3s ease forwards;
     }
 
-    /* Hero & Universal Button Scaling */
+    /* Hero & Universal Button Scaling Fixes */
     .hero-tech {
         padding: 60px 20px;
     }
 
     .hero-tech h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.2;
     }
 
-    /* Fixes buttons bleeding off the edge of screen */
+    /* Prevent buttons from bleeding off the edge of screen */
     .btn-main, .btn-outline, .nav-cta, .btn-submit {
         display: block;
         width: 100%; 
         margin: 10px 0;
         text-align: center;
-        box-sizing: border-box; /* Includes padding in 100% width */
+        box-sizing: border-box; /* Includes padding in 100% width calculation */
     }
 
-    /* Grid & Card Spacing Fixes */
+    /* Grid Layout Fixes for Cards */
     .info-card-grid, .portfolio-grid, .card-grid {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 10px;
     }
 
-    .svc-product-card {
-        padding: 2rem 1.5rem; /* Reduces large desktop padding */
-    }
-
-    /* Filter Bar - Keeps styling while allowing scroll */
-    .svc-filter-bar {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 15px;
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-tech h1 {
-        font-size: 1.8rem;
-    }
-    
-    .logo {
-        font-size: 1.1rem;
+    /* Footer Accessibility Fix: Ensure links have enough space and contrast */
+    .footer-links a, address a {
+        color: var(--text-secondary);
+        display: inline-block;
+        padding: 5px 0;
+        text-decoration: underline; /* Required for non-color dependent links */
     }
 }
