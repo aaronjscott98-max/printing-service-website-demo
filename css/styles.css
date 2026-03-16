@@ -1,10 +1,10 @@
-/* --- 1. CORE VARIABLES --- */
 :root {
   --bg-dark: #0B0E14;           
   --bg-surface: #151921;        
-  --accent-tech: #10B981;       
-  --accent-hover: #059669;      
-  --accent-glow: rgba(16, 185, 129, 0.3);
+  /* Darkened to #059669 to pass WCAG AA contrast with white text */
+  --accent-tech: #059669;       
+  --accent-hover: #047857;      
+  --accent-glow: rgba(5, 150, 105, 0.3);
   
   --text-primary: #FFFFFF;      
   --text-secondary: #CBD5E1;    
@@ -691,7 +691,7 @@ address {
     line-height: 1.8;
 }
 
-/* --- 15. MOBILE RESPONSIVENESS --- */
+/* --- 15. MOBILE RESPONSIVENESS (FINAL ACCESSIBLE FIX) --- */
 
 @media (max-width: 1024px) {
     .info-card-grid, .portfolio-grid, .card-grid {
@@ -701,48 +701,27 @@ address {
 }
 
 @media (max-width: 768px) {
-    /* 1. Navigation & Logo Fix */
+    /* Header & Logo Scaling Fix */
     .nav-container {
-        padding: 0 20px;
+        padding: 0 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     .logo {
-        font-size: 1.25rem; /* Scaled down to prevent clipping */
+        font-size: 1.2rem; /* Shrinks logo to prevent clipping */
         white-space: nowrap;
     }
 
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-surface);
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-        padding: 2rem;
-        gap: 1.5rem;
-        text-align: center;
-        list-style: none;
-        z-index: 1000;
-    }
-
-    .nav-links.open {
-        display: flex;
-        animation: svcItemFade 0.3s ease forwards;
-    }
-
-    /* RESTORED: Hamburger Toggle Styles */
+    /* RESTORED: Hamburger Toggle Icon */
     .hamburger {
-        display: block;
+        display: block; 
         background: none;
         border: none;
         cursor: pointer;
         padding: 10px;
+        z-index: 1100;
     }
 
     .hamburger .bar {
@@ -754,7 +733,30 @@ address {
         transition: var(--transition);
     }
 
-    /* 2. Hero & Button Scaling */
+    /* Mobile Menu: Solid Background & Shadow */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-surface); /* Prevents hero text overlap */
+        border-bottom: 2px solid var(--accent-tech);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 2.5rem 1.5rem;
+        gap: 1.5rem;
+        text-align: center;
+        list-style: none;
+        z-index: 1000;
+    }
+
+    .nav-links.open {
+        display: flex;
+        animation: svcItemFade 0.3s ease forwards;
+    }
+
+    /* Hero & Universal Button Scaling */
     .hero-tech {
         padding: 60px 20px;
     }
@@ -764,44 +766,44 @@ address {
         line-height: 1.2;
     }
 
-    /* Fixed Button Widths */
-    .btn-main, .btn-outline {
+    /* Fixes buttons bleeding off the edge of screen */
+    .btn-main, .btn-outline, .nav-cta, .btn-submit {
         display: block;
-        width: 100%;
+        width: 100%; 
         margin: 10px 0;
         text-align: center;
-        box-sizing: border-box;
+        box-sizing: border-box; /* Includes padding in 100% width */
     }
 
-    /* 3. Grid & Card Fixes */
+    /* Grid & Card Spacing Fixes */
     .info-card-grid, .portfolio-grid, .card-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 20px;
+        gap: 20px;
+        padding: 10px;
     }
 
     .svc-product-card {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem; /* Reduces large desktop padding */
     }
 
-    .port-item {
-        height: auto;
-        aspect-ratio: 4 / 3;
-    }
-
-    /* 4. Filter Bar - Horizontal Scroll */
+    /* Filter Bar - Keeps styling while allowing scroll */
     .svc-filter-bar {
         justify-content: flex-start;
         overflow-x: auto;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
         white-space: nowrap;
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
+        gap: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-tech h1 {
         font-size: 1.8rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
     }
 }
