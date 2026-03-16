@@ -1,14 +1,12 @@
 :root {
   --bg-dark: #0B0E14;           
   --bg-surface: #151921;        
-  /* Darkened to #059669 for WCAG AA compliance with white text */
   --accent-tech: #059669;       
   --accent-hover: #047857;      
   --accent-glow: rgba(5, 150, 105, 0.3);
   
   --text-primary: #FFFFFF;      
   --text-secondary: #CBD5E1;    
-  /* Lightened to #94A3B8 for better contrast against dark backgrounds */
   --text-muted: #A1A1AA;        
   
   --border: #2D3748;            
@@ -277,7 +275,7 @@ footer {
 .footer-links a { color: var(--text-muted); }
 .footer-links a:hover { color: var(--accent-tech); padding-left: 5px; }
 
-.footer-link a{
+.footer-link {
     color: var(--text-primary);
 }
 
@@ -740,6 +738,25 @@ address {
     .nav-links.open {
         display: flex;
         animation: svcItemFade 0.3s ease forwards;
+    }
+
+    /* Ensures the button is visible on mobile */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1100; /* Keeps it above the mobile menu overlay */
+    }
+
+    /* Styles the actual lines (bars) of the hamburger */
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        margin: 5px 0;
+        transition: var(--transition);
     }
 
     /* Hero & Universal Button Scaling Fixes */
