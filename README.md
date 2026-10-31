@@ -1,52 +1,64 @@
-🖨️ Printing Service Website Demo
+# 🖨️ Printing Service Website Demo
 
-A professional landing page demo designed and built for a local service-based business. This project showcases my ability to deliver a polished, high-conversion user experience from the ground up.
+A landing page demo I designed and developed for a fictional printing business based in Dundee.
 
-👉 [View the Live Demo](https://aaronjscott98-max.github.io/printing-service-website-demo/)
+The idea was to create a website that a local printing company could realistically use to showcase its services, provide information and encourage customers to get in touch.
 
-🏗️ The Project Brief
+👉 **[View the Live Demo](https://aaronjscott98-max.github.io/printing-service-website-demo/)**
 
-I created this demo to show how a local business in the Dundee & Tayside area can establish a premium digital presence. The focus was on building trust through clean design, intuitive navigation, and clear calls-to-action tailored for a high-quality printing service.
+---
 
-✨ Why This Works
+### 🏗️ About the Project
 
-Actually Mobile-First: I didn't just slap a media query on at the end; I built this to look sharp on a phone first, which is where most local customers are actually looking.
+I created this project to practise designing and developing a website for a small local business, this time focusing on a printing service operating across Dundee and Tayside.
 
-Designed for Real People: Focused on hierarchy and readability so users can find a service or a contact button in under 5 seconds.
+Printing businesses can offer quite a few different services, so I wanted to find a way to present everything without making the website feel cluttered or difficult to navigate.
 
-Lightweight Code: No bloated frameworks here—just semantic HTML and modern CSS (Flexbox/Grid) for a site that loads instantly.
+I also wanted to work on my mobile-first development skills, starting with smaller screens before adapting the layout for tablets and desktops.
 
-Dundee Focus: Tailored for the local market to demonstrate how a Tayside business can stand out from generic national competitors.
+### ✨ What I Focused On
 
-📋 Featured Services
+- **Mobile-First Design:** Started with the mobile layout and gradually adjusted the design for larger screens using CSS media queries.
+- **Navigation & Layout:** Organised the content into sections so visitors can quickly see what services are available and how to get in touch.
+- **Front-end Development:** Built the website using HTML, CSS and JavaScript without relying on any frameworks.
+- **Local Business Focus:** Used Dundee and Tayside as the service area to give the demo a more realistic setting.
+- **Calls to Action:** Included contact options throughout the page so visitors have a clear next step if they're interested in a service.
 
-To demonstrate a real-world business structure, this landing page includes dedicated sections for:
+### 📋 Services Included
 
-Large Format Printing: High-resolution banners and signage.
+To make the demo feel more like an actual printing business website, I included several services:
 
-Corporate Stationery: Professional business cards and branded letterheads.
+- **Large Format Printing:** Banners, posters and signage.
+- **Business Stationery:** Business cards, letterheads and other printed materials.
+- **Custom Graphics:** Design and printing options for businesses.
+- **Fast Turnaround:** Information about local printing and delivery services.
 
-Custom Graphics: Bespoke design and print solutions for local businesses.
+These are example services included for demonstration purposes.
 
-Fast Turnaround: A focus on local Tayside delivery and efficiency.
+### 🛠️ Built With
 
-🛠️ Built With
+- **Design:** Figma
+- **Front-end:** HTML5, CSS3 and Vanilla JavaScript
+- **Layout:** CSS Flexbox, Grid and media queries
+- **Hosting:** GitHub Pages
 
-Design: Bespoke UI layout (Figma)
+The website is hosted through GitHub Pages so it can be viewed and tested directly in a browser.
 
-Frontend: HTML5, CSS3, and Vanilla JavaScript
+### 💭 Looking Back at the Project
 
-Hosting: I use GitHub Pages to host live, interactive previews of my work so you can see my code in action.
+One of the main things I wanted to work on with this project was how I structured the content, especially on mobile.
 
-💼 About Me
+With several different services to include, I had to think about how much information to show in each section and how to keep everything readable without making the page too long or crowded.
 
-I’m a Web Design & Development Graduate based in Dundee. I’m currently taking on freelance projects, but I’m really looking for a permanent role where I can contribute my design and frontend skills to a forward-thinking team.
+It was also another opportunity to practise building a responsive website using HTML, CSS and JavaScript rather than relying on templates or website builders.
 
-I’m that rare breed of designer who actually enjoys getting stuck into the code—I don't just want things to look pretty; I want them to work perfectly.
+### 📬 Find Out More
 
-📬 Let's Chat
-Portfolio: [My Portfolio](https://aaronjscott.co.uk/)
+I'm a Web Design & Development graduate based in Dundee, currently looking for opportunities in UI/UX design and front-end development, alongside taking on smaller freelance projects.
 
-Email: aaron.j.scott98@gmail.com
+- **Portfolio:** [aaronjscott.co.uk](https://aaronjscott.co.uk/)
+- **Email:** [aaron.j.scott98@gmail.com](mailto:aaron.j.scott98@gmail.com)
 
-Created as a demonstration of design-led development and frontend implementation.
+---
+
+*This website was created as a personal demonstration project and does not represent an operating printing business.*
